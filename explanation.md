@@ -41,7 +41,8 @@ Here, the script opens a GET request to the constructed URL. The third parameter
         // Extract recipe information from the response
         // Update HTML elements with recipe details
     }
-};```
+}; 
+```
 
 Next we'll create a function that executes whent he request completes.
 
@@ -52,7 +53,9 @@ Next, the function checks if the request was successful (a status code between 2
 6. Send Request:
 
 
-    ```request.send();```
+    ```
+   request.send();
+   ```
 
 Finally, this line sends the HTTP request to the Spoonacular API.
 
