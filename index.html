@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes|Jenna's Kitchen</title>
+  <!-- FONTAWESOME ICONS -->
+  <script src="https://kit.fontawesome.com/a48cb8a541.js" crossorigin="anonymous"></script>
+<!--   GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <!--   BOOTSTRAP CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <!--   CUSTOM CSS -->
+  <link href="style.css" rel="stylesheet" />
+  <!--Jquery Link-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+<header class="d-flex align-items-center justify-content-center">
+  <div class="container">
+  <h1 class="fw-bold display-2">Eliminate Food Waste</h1>
+    <div class="lead">
+        <p>In the United States, people waste 92 billion pounds of food annually. That's equal to 145 billion meals!<a href="https://www.feedingamerica.org/our-work/reduce-food-waste" target="_blank" rel="noopenner noreferrer">Source</a></p>
+    <p>You can help reduce food waste by cooking with what you have at home.</p>
+    <p>Our recipe generator will help you find a recipe based on your current ingredients.</p>
+    </div>
+  </div>
+</header>
+<main>
+
+      <div class="searching container text-center p-5">
+
+       <div class="input-group mb-4">
+         <span class="input-group-text" id="basic-addon1">Ingredient #1:</span>
+        <input class="ing1 form-control" placeholder="Ingredient #1" id="search-input">
+          </div>
+       <div class="input-group mb-4">
+         <span class="input-group-text" id="basic-addon1">Ingredient #2:</span>
+        <input class="ing2 form-control" placeholder="Ingredient #2" id="search-input">
+          </div>
+       <div class="input-group mb-4">
+         <span class="input-group-text" id="basic-addon1">Ingredient #3:</span>
+        <input class="ing3 form-control" placeholder="Ingredient #3" id="search-input">
+          </div>
+       
+
+        <button class="btn btn-primary mb-5" onclick="fetchRecipes()">Search</button>
+
+
+        <h2 class="search-results">Your search results:</h2>
+
+        <br>
+        <div class="results container">
+          <h2 class="recipe-title"></h2>
+
+          <img class="recipe-image p-5" src="">
+
+          <div class="recipe-instructions"></div>
+
+        </div>
+
+      </div>
+
+      <br>
+      <br>
+
+
+   
+    
+  </main>
+
+  <!--   CUSTOM JS -->
+  <script src="script.js"></script>
+  <!--   BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+}
+
+html{
+  height: 100%;
+  font-size: 16px;
+}
+
+
+header {
+  min-height: 50vh;
+  background: black;
+  color: #efefef;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6{
+        font-family: 'Courier Prime', monospace;
+}
+
+.recipe-instructions {
+  line-height: 1.75;
+}
+
+.search-results {
+      font-family: 'Courier Prime', monospace;
+}
