@@ -54,6 +54,6 @@ Next, the function checks if the request was successful (a status code between 2
 
     ```request.send();```
 
-    Finally, this line sends the HTTP request to the Spoonacular API.
+    Finally, this line sends the HTTP request to the Spoonacular API.```
 
 The function also includes an optional part where it fetches additional information about the recipe (such as instructions) using another Spoonacular API endpoint (/recipes/{id}/information). This information is fetched after the initial request and is handled similarly to the initial request.
