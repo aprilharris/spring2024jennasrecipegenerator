@@ -1,69 +1,59 @@
-//api javascript
-// API KEY: dafc1b303bf1432da17d25bd0e5ba8a2
 
 
+// apiKey
+// 7db1baf9ccbb44a78234fabcb60e7f5f 
+let url = "https://api.spoonacular.com/recipes/random?apiKey=7db1baf9ccbb44a78234fabcb60e7f5f";
 
-function fetchRecipes(){
+function fetchRecipe(){
   let ing1 = $(".ing1").val();
   let ing2 = $(".ing2").val();
   let ing3 = $(".ing3").val();
-  
-  
-  let url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=dafc1b303bf1432da17d25bd0e5ba8a2&ingredients="+ing1+","+ing2+","+ing3+"&number=1";
+  let temp = Math.floor((Math.random()*3)+1); // Used for showcase - Not needed for original. 
 
-  console.log(url);
-
+  let url2 = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=7db1baf9ccbb44a78234fabcb60e7f5f&ingredients="+ing1+","+ing2+","+ing3+"&number="+temp;
+  console.log(url2);
 
   let request = new XMLHttpRequest();
 
-  request.open("GET", url, true);
-  
+  request.open("GET", url2, true);
+
   request.onload = function() { //Once we recieve the response do this vvvv
-  
+
     let data = JSON.parse(this.response);
     if (request.status >= 200 && request.status < 400) {
-      
+
       // console.log(data); - Educational Purposes 
-      recipeImage = data[0].image;
-      recipeTitle = data[0].title;
-      recipeId = data[0].id;
-      console.log(recipeId);
-      console.log(recipeTitle);
-      $(".recipe-title").text(recipeTitle)
-      $('.recipe-image').attr('src',recipeImage);
-
-
-
+      recipe_img = data[0].image;
+      resTitle = data[0].title;
+      resId = data[0].id;
+      console.log(resId);
+      console.log(resTitle);
+      $(".recipeTitle").html(resTitle)
+      $('.recipeImage').attr('src',recipe_img);
 
       //OPTIONAL EXTENTIAL - BUT SEEMS USEFUL
-      let urlN = "https://api.spoonacular.com/recipes/"+recipeId+"/information?apiKey=dafc1b303bf1432da17d25bd0e5ba8a2";
+      let urlN = "https://api.spoonacular.com/recipes/"+resId+"/information?apiKey=7db1baf9ccbb44a78234fabcb60e7f5f";
       let newRequest = new XMLHttpRequest();
-      
       newRequest.open("GET", urlN, true);
       newRequest.onload = function() { //Once we recieve the response do this vvvv
 
         let newData = JSON.parse(this.response);
         if (newRequest.status >= 200 && newRequest.status < 400) {
-          let recipeInstructions = newData.instructions;
-          console.log(recipeInstructions);
+          let resIns = newData.instructions;
+          console.log(resIns);
 
-          if(recipeInstructions == null){
-            $(".recipe-instructions").text("No instructions are available at this time");
+          if(resIns == null){
+            $(".recipeInstructions").text("No instructions are available at this time");
           }
           else{
-            $(".recipe-instructions").html(recipeInstructions);
-          }
-
-  	      
-	      }
+            $(".recipeInstructions").html(resIns);
+          }  	      
+        }
       };
       newRequest.send();
-      
-
-      
-      
-  	}
+      //$("#advice").text(data.recipes[0].instructions);
+    }
   };
-  
   request.send();
 }
+

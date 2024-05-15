@@ -1,4 +1,4 @@
-This JavaScript function, fetchRecipes(), is designed to fetch recipes based on ingredients provided by the user from the Spoonacular API. 
+Our app's main function is fetchRecipes(). This function fetches recipes based on ingredients provided by the user from the Spoonacular API. 
 
 Let's break down how it works:
 
@@ -17,9 +17,14 @@ These lines retrieve the values (ingredients) entered by the user into three inp
 
 
 
-```let url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=dafc1b303bf1432da17d25bd0e5ba8a2&ingredients=" + ing1 + "," + ing2 + "," + ing3 + "&number=1";```
+```let url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=[YOUR API KEY GOES HERE]2&ingredients=" + ing1 + "," + ing2 + "," + ing3 + "&number=1";```
 
-Make sure you have your API key. We need it to build the custom URL for the Spoonacular API request. The URL includes the API key and the ingredients provided by the user as parameters. The "&number=1" parameter at the end of the URL specifies that only one recipe should be returned.
+
+
+
+Next we'll build our URL for the Spoonacular API request. Update the above URL with your API key where noted. The URL not only includes your API key but also the ingredients provided by the user as parameters (ing1, ing2, ing3).
+
+The "&number=1" parameter at the end of the URL specifies that only one recipe should be returned.
 
 3. Create XMLHttpRequest Object:
 
